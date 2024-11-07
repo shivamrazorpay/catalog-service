@@ -1,0 +1,4 @@
+# password is hard coded for now, will be fetched from vault
+[auth]
+username = "admin"
+password = "admin"
