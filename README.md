@@ -62,15 +62,21 @@ Get Code Coverage
 #### List Services with Sorting, Pagination, and Search
 
 ```http
-  GET /services?sortBy={column.order}&limit={limit}&offset={offset}&search={column.value}
+  GET /services
 ```
+Request Parameter
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `sortBy` | `string` | **Not Required**. Sort the services by there column in Ascending(asc) or Descending(desc) order. input is the format: column.order|
-| `limit` | `string` | **Not Required**. limit the service response array length. Default is 10. Max is 20|
-| `offset` | `string` | **Not Required**. offset the service response array|
-| `search` | `string` | **Not Required**. search the services by there column with the input keyword. If Matches if the keyword is present in the field (not exact Match). input is the format: column.value |
+| Parameter    | Type     | Description                                                                         |
+|:-------------|:---------|:------------------------------------------------------------------------------------|
+| `pagination` | `object` | **Not Required**. Optional. Pagination options.                                     |
+| `limit`      | `int`    | **Not Required**. limit the service response array length. Default is 10. Max is 20 |
+| `offset`     | `int`    | **Not Required**. Number of records to skip.                                        |
+| `search`     | `object` | **Not Required**. Search filters.                                                   |
+| `column`     | `string` | **Not Required**. The field to search.                                              |
+| `value`      | `string` | **Not Required**. The search string.                                                |
+| `sort`       | `object` | **Not Required**. Search filters.                                                   |
+| `column`     | `string` | **Not Required**. The column to sort by.                                            |
+| `order`      | `string` | **Not Required**. Sort in Ascending(asc) or Descending(desc) order.                 |
 
 
 #### Create a New Service
